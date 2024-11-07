@@ -1,0 +1,89 @@
+<div class="lg:w-4/6 mx-auto px-32 my-2">
+  <div *ngIf="!placeOrder" class="text-lg font-semibold text-orange-600 my-2">*Sign in to place order</div>
+  <h3 class="text-2xl font-bold">SECURE CHECKOUT</h3>
+  
+  <div>
+    <div *ngFor="let food of cart" class="grid grid-cols-4 place-items-center py-4">
+      <img [src]="food.item.image" alt="Food Image" class="w-28 h-28 rounded-full">
+
+      <!-- Food Name and Price -->
+      <div>
+        <div class="font-semibold text-lg">{{ food.item.name }}</div>
+        <div>₹{{ food.item.price }}</div>
+      </div>
+
+      <!-- Quantity Controls -->
+      <div class="flex items-center space-x-4">
+        <button (click)="removeFromCart(food.item)" class="px-2 py-1 bg-gray-300 rounded">-</button>
+        <span class="text-lg">{{ food.item.quantity }}</span>
+        <button (click)="addToCart(food.item)" class="px-2 py-1 bg-gray-300 rounded">+</button>
+      </div>
+      
+      <!-- Total price -->
+      <div>₹{{food.item.quantity * food.item.price}}</div>
+    </div>
+    <hr class="my-2">
+    
+    <div class="mt-6 text-right text-lg font-semibold">
+      Subtotal: ₹{{ calculateTotal() }}
+      <div>   
+        <button *ngIf="cart.length > 0" (click)="checkOut()" class="px-4 py-2 text-white rounded-lg my-2 bg-orange-500">Place Order</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CheckOut Modal -->
+<div *ngIf="showOrderModal" class="fixed inset-0 flex justify-center items-center bg-black bg-opacity-50 z-50">
+  <div *ngIf="orderFailed" class="text-red-500 text-xl font-semibold p-4 bg-white rounded-lg shadow-lg mb-4 w-96 text-center">
+    Failed to place Order! Try Again!!
+  </div>
+  <div *ngIf="orderFailed === false" class="text-green-500 text-xl font-semibold p-4 bg-white rounded-lg shadow-lg mb-4 w-96 text-center">
+    Order Placed Successfully!!
+  </div>
+
+  <div class="bg-white p-6 rounded-lg shadow-xl w-96 max-w-sm transform transition-all duration-300 ease-in-out scale-95 hover:scale-100">
+    <p class="text-2xl font-bold text-gray-800 mb-4 text-center">Confirm Your Order</p>
+
+    <!-- Directly Place Order Button -->
+    <div class="mb-4">
+      <button 
+        (click)="onOrderSubmit()"
+        class="w-full py-3 bg-orange-500 text-white rounded-md shadow-lg hover:bg-orange-600 focus:outline-none transform transition duration-300 ease-in-out hover:scale-105">
+        Place Order
+      </button>
+    </div>
+    
+    <!-- Cancel Button -->
+    <button 
+      (click)="closeModal()" 
+      class="mt-4 w-full py-2 bg-gray-300 text-gray-700 rounded-md shadow-md hover:bg-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-300 focus:ring-opacity-50 transform transition duration-200 ease-in-out hover:scale-105">
+      Cancel
+    </button>
+  </div>
+
+  <div *ngIf="isItemAdded" class="fixed inset-0 bg-black bg-opacity-50 z-50 flex justify-center items-center">
+    <div class="bg-green-500 text-white px-10 py-6 rounded-xl shadow-2xl transform transition-all scale-100 opacity-100 animate-modal-entry">
+      <!-- Modal Content -->
+      <div class="flex justify-between items-center mb-4">
+        <p class="text-lg font-bold">Order Placed Successfully!</p>
+        <!-- Close Button -->
+        <button (click)="closePopup()" class="text-white text-3xl font-bold hover:text-gray-300 transition-colors">
+          &times;
+        </button>
+      </div>
+      <div class="flex justify-center mt-4">
+        <i class="fas fa-check-circle text-6xl text-white"></i>
+      </div>
+      <p class="mt-4 text-center text-lg text-gray-200">Your order has been successfully placed.</p>
+      <div class="flex justify-center mt-4">
+        <button (click)="closePopup()" class="bg-white text-green-500 hover:bg-green-500 hover:text-white px-6 py-2 rounded-lg font-semibold transition-all">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+  
+  
+</div>
+
