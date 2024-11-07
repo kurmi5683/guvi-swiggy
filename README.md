@@ -19,38 +19,38 @@ A **Swiggy-inspired** food ordering application built using **Angular** and **Ta
 ### 1. **Home Page**
 The **Home Page** features a collection of the top restaurants and food items. Users can scroll horizontally to explore different restaurant options, each with a featured dish or promotion.
 
-![Home Page](src/assets/images/home-page.jpg)
+![Home Page](src/assets/home-page.jpg)
 
 ### 2. **Search Page**
 The **Search Page** provides a search bar at the top, allowing users to filter restaurants and dishes by their names. It helps users quickly find what they’re looking for by typing keywords into the search bar.
 
-![Search Page](src/assets/images/search-page.jpg)
+![Search Page](src/assets/search-page.jpg)
 
 ### 3. **Favorites Page**
 The **Favorites Page** lists all the dishes and restaurants that users have marked as their favorites. It uses Angular services and `localStorage` to store the favorites for quick access across sessions.
 
-![Favorites Page](src/assets/images/favorites-page.jpg)
+![Favorites Page](src/assets/favorites-page.jpg)
 
 ### 4. **Restaurant Page**
 On the **Restaurant Page**, users can view the restaurant's full menu, select items, and add them to the cart. The page only allows users to order from one restaurant at a time.
 
-![Restaurant Page](src/assets/images/restaurant-page.jpg)
+![Restaurant Page](src/assets/restaurant-page.jpg)
 
 ### 5. **Cart Page**
 The **Cart Page** allows users to view items they have added to the cart, adjust item quantities, and calculate the total cost. Authenticated users can proceed to place the order.
 
-![Cart Page](src/assets/images/cart-page.jpg)
+![Cart Page](src/assets/cart-page.jpg)
 
 ### 6. **Sigin/SingUp Page**
 The **Sigin/SingUp Page** enables users to securely log in or register using their credentials. The user details are stored and retrieved via MockAPI for secure authentication.
 
-![Sigin/SingUp](src/assets/images/signin.jpg)
-![Sigin/SingUp](src/assets/images/signin.jpg)
+![Sigin/SingUp](src/assets/signin.jpg)
+![Sigin/SingUp](src/assets/signin.jpg)
 
 ### 7. **Order Confirmation Page**
 The **Order Confirmation Page** is shown after a successful order placement, summarizing the details of the order and providing an option to go back to the homepage or continue exploring other restaurants.
 
-![Order Confirmation Page](src/assets/images/order-confirmation-page.jpg)
+![Order Confirmation Page](src/assets/order-confirmation-page.jpg)
 
 ---
 
