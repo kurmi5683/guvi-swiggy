@@ -15,12 +15,20 @@ export class OrdersComponent implements OnInit,AfterViewInit{
  restuanrantName:any='';
  singleRestaurant:boolean=true;
 
- menuItems= [{ name: 'Truffle', price: 140, image: '../../assets/truffle.avif',quantity:0 },
+ menuItems= [
+  { name: 'Chicken Biryani', price: 180, image: '../../assets/chickenbiryani.avif',quantity:0 },
+  { name: 'Delight Pizza', price: 250, image: '../../assets/MoMo.avif',quantity:0 },
+  { name: 'Pasta Alfredo', price: 220, image: '../../assets/Accord.avif', quantity: 0 },
+  { name: 'Grilled Cheese Sandwich', price: 150, image: '../../assets/grilledsandwich.avif', quantity: 0 },{ name: 'Salad', price: 100, image: '../../assets/salad.avif',quantity:0 },
+  { name: 'Chicken Roll', price: 199, image: '../../assets/chickenroll.avif', quantity: 0 },
+  { name: 'Truffle', price: 140, image: '../../assets/truffle.avif',quantity:0 },
  { name: 'Brownie', price: 120, image: '../../assets/brownie.avif',quantity:0 },
- { name: 'Chicken Biryani', price: 180, image: '../../assets/chickenbiryani.avif',quantity:0 },
- { name: 'Delight Pizza', price: 250, image: '../../assets/MoMo.avif',quantity:0 },
- { name: 'Salad', price: 100, image: '../../assets/salad.avif',quantity:0 },
- {name:'Chicken Roll',price:199,image:'../../assets/chickenroll.avif',quantity:0}
+ { name: 'Vegetable Stir Fry', price: 130, image: '../../assets/veggreen.avif', quantity: 0 },
+ { name: 'Sushi Platter', price: 350, image: '../../assets/susshi.avif', quantity: 0 },
+ { name: 'Mango Smoothie', price: 90, image: '../../assets/mangolassi.avif', quantity: 0 },
+ { name: 'Cheesecake', price: 170, image: '../../assets/BakeryWorld.avif', quantity: 0 },
+ { name: 'Tacos', price: 180, image: '../../assets/SanjukaDhaba.avif', quantity: 0 },
+ { name: 'Paneer Tikka', price: 200, image: '../../assets/pannertikka.avif', quantity: 0 }
 ];
 isItemAdded: boolean = false;
 showItemAddedPopup(): void {
